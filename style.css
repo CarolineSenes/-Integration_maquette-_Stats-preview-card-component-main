@@ -10,6 +10,7 @@
     --accent-overlay-color: hsla(277, 100%, 50%, 0.5);
     --main-paragraph-color: hsla(0, 0%, 100%, 0.75);
     --stat-headings-color: hsla(0, 0%, 100%, 0.6);
+    --main-heading-stats: hsl(0, 0%, 100%);
 }
 *{
     box-sizing: border-box;
@@ -69,10 +70,14 @@ p{
     color: var(--main-paragraph-color);
     font-size: 0.9rem;
 }
+.heading{
+    color: var(--main-heading-stats);
+}
 .card{
+    display: flex;
+    flex-direction: column;
     width: 327px;
     height: 781px;
-    text-align: center;
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
@@ -95,6 +100,7 @@ p{
     width: 257px;
     margin-left: 35px;
     margin-right: 35px;
+    text-align: center;
 }
 .card_txt p{
     line-height: 1.5rem;
@@ -106,6 +112,54 @@ p{
     text-transform: uppercase;
     color: var(--stat-headings-color);
     font-size: 0.7rem;
+    font-family: var(--secondary-font);
+}
+
+@media screen and (min-width: 1280px){
+    .card{
+        width: 1110px;
+        height: 446px;
+        flex-direction: row-reverse;
+    }
+    .card_txt{
+        height: 446px;
+        width: 570px;
+        margin-left: 74px;
+        margin-right: 121px;
+        margin-top: 79px;
+        margin-bottom: 64px;
+        text-align: left;
+    }
+    h1{
+        font-size: 2.2rem;
+        line-height: 3rem;
+        margin-bottom: 1.3rem;
+    }
+    .card_txt_subtxt{
+        width: 342px;
+    }
+    .card_txt p{
+        line-height: 1.5rem;
+        font-size: 0.9rem;
+    }
+    .card_image, .overlay{
+        height: 446px;
+        width: 540px;
+        border-radius: 0 10px 10px 0;
+    }
+    .card_image{
+        background-image: url("./images/image-header-desktop.jpg");
+        background-size: cover;
+        margin-bottom: 0;
+    }
+    .stats{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .stats p{
+        font-size: 0.8rem;
+    }
 }
 
 /* FOOTER
